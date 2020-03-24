@@ -4,6 +4,51 @@ version = "0.1.0"
 authors = ["Mikhail <sadsnake@mixbytes.io>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
+hex = "*"
+log = "*"
+env_logger = "*"
+
+[dependencies.substrate-api-client]
+git = 'https://github.com/scs/substrate-api-client'
+version = "2.0.0"
+
+[dependencies.sp-core]
+git = "https://github.com/paritytech/substrate"
+rev = "00a400f82539e2f78e8ddbcd98aea512c87c5f3c"
+package = "sp-core"
+default-features = false
+features = ["full_crypto"]
+
+[dependencies.keyring]
+git = "https://github.com/paritytech/substrate"
+rev = "00a400f82539e2f78e8ddbcd98aea512c87c5f3c"
+package = "sp-keyring"
+
+[dependencies.sp-runtime]
+git = "https://github.com/paritytech/substrate"
+rev = "00a400f82539e2f78e8ddbcd98aea512c87c5f3c"
+
+[dependencies.indices]
+git = "https://github.com/paritytech/substrate"
+rev = "00a400f82539e2f78e8ddbcd98aea512c87c5f3c"
+package = "pallet-indices"
+default-features=false
+
+[dependencies.pallet-asset]
+git = "https://github.com/paritytech/substrate"
+rev = "00a400f82539e2f78e8ddbcd98aea512c87c5f3c"
+package = "pallet-generic-asset"
+default-features=false
+
+[dependencies.node_primitives]
+git = "https://github.com/paritytech/substrate"
+rev = "00a400f82539e2f78e8ddbcd98aea512c87c5f3c"
+package = "node-primitives"
+default-features=false
+
+[dependencies.codec]
+package = "parity-scale-codec"
+features = ["derive"]
+version = "1.0.0"
+default-features = false
