@@ -1,22 +1,15 @@
-#[macro_use]
 extern crate log;
 
-use log::Level;
+use sp_core::crypto::Pair;
+use sp_runtime::MultiSignature;
 
 use keyring::AccountKeyring;
-use sp_core::crypto::Pair;
-use sp_core::H256 as Hash;
 use std::sync::mpsc::channel;
-use std::thread;
 
 use codec::Decode;
 use node_primitives::AccountId;
-use sp_runtime::MultiSignature;
 
 use substrate_api_client::{compose_extrinsic, extrinsic::xt_primitives::*, Api};
-
-mod tablescore;
-use pallet_asset::{Owner, PermissionLatest};
 
 pub type AssetId = u32;
 pub type OracleId = u32;
